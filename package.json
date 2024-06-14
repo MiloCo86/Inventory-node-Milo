@@ -1,0 +1,22 @@
+{
+  "name": "inventory-node-milo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "addNewGame": "node index.js addNewGame",
+    "showAll": "node index.js showAll",
+    "showGame": "node index.js showGame",
+    "deleteGame": "node index.js DeleteGame",
+    "updateGameInfo": "node index.js UpdateGame",
+    "addToShopCart": "node index.js addToShopCart",
+    "emptyShopCart": "node index.js emptyShopCart"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "nanoid": "^3.3.7"
+  }
+}
