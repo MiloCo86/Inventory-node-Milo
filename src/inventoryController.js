@@ -1,10 +1,11 @@
-const { readData, writeData, validateShowAllParams, validateShowGameParams, validateDeleteParams } = require("./helpers");
+const { readData, writeData, validateShowAllParams, validateShowGameParams, validateDeleteParams,validateUpdateParams } = require("./helpers");
 const { nanoid } = require("nanoid");
 const colors = require("colors");
 
 const print = console.log;
 
 const data = readData('./data','gameInventory.json')
+const shopCart = readData('./data','shopCart.json')
 
 
 
@@ -92,10 +93,56 @@ function deleteGame(options){
     }
 }
 
+function updateGame(options){
+
+    let formatedParams = validateUpdateParams(options)
+    let newData=[]
+    let game
+    if (formatedParams!=undefined){
+        if(formatedParams.id){
+            game = data.find(game=>game.id == formatedParams.id)
+            newData = data.filter(game=>game.id !=formatedParams.id)
+            if(formatedParams.name){
+                game.name=formatedParams.name
+            }
+            if(formatedParams.price){
+                game.price=formatedParams.price
+            }
+            if(formatedParams.inStock){
+                game.inStock=formatedParams.inStock
+            }
+            newData.push(game) 
+        }
+
+        if(game==undefined){
+            print(colors.yellow('ID not found'))
+        }else{
+            print(colors.green(`${game.name} updated`))
+            writeData('./data','gameInventory.json',newData)
+        }
+
+    }
+}
+
+function showShopCart(){
+    if (shopCart.length==0){
+        print(colors.yellow('ShopCart is empty'))
+    }else{
+        print(shopCart)
+    }
+}
+
+function addToShopCart(id){
+    let validID = validateShowGameParams(id)
+    
+}
+
 module.exports = {
     addNewGameToData,
     showAll,
     showGame,
-    deleteGame
+    deleteGame,
+    updateGame,
+    showShopCart
 }
 

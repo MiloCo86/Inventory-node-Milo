@@ -30,7 +30,13 @@ function validateNewGameParams(array){
         break
       }else{
         const [key, value] = param.split("=");
-        newGameFormated[key] = value;
+        if(key == 'id' || key == 'name' || key == 'company' || key == 'price' || key == 'inStock'){
+          newGameFormated[key] = value;
+        }else{
+          print(colors.red(`${key} is not a valid key`))
+          newGameFormated = {}
+          break
+        }
       } 
     }
   }
@@ -122,11 +128,48 @@ function validateDeleteParams (array){
 }
 
 
+function validateUpdateParams (array){
+  let validFormat ={}
+  if (array.length == 0){
+    print(colors.red('No parameters found'))
+    print(colors.yellow('please add a parameter with the format: id=" " and then the values to update'))
+  }else if (array.length > 4){
+    print(colors.red('Invalid format or too many parameters'))
+    print(colors.yellow('correct format: id=" " name=" " price=123 =" "'))
+  }else{
+      if (!array[0].includes("=")) {
+        print(colors.red('invalid format!'))
+        print(colors.yellow('correct format: name=" " or id=" " or price=" "'))
+      }else{
+        for (const param of array) {
+          if (!param.includes("=")) {
+            print(colors.red('invalid format!'))
+            print(colors.yellow('correct format name=value company=value price=value and stock=value'))
+            validFormat = undefined
+            break
+          }else{
+            const [key, value] = param.split("=");
+            if(key == 'id' || key == 'name' || key == 'company' || key == 'price' || key == 'inStock'){
+              validFormat[key] = value;
+            }else{
+              print(colors.red(`${key} is not a valid key`))
+              validFormat = undefined
+            }
+            
+          } 
+        }   
+      } 
+    return validFormat
+  }
+}
+
+
 module.exports = {
   readData,
   writeData,
   validateNewGameParams,
   validateShowAllParams,
   validateShowGameParams,
-  validateDeleteParams
+  validateDeleteParams,
+  validateUpdateParams
 };

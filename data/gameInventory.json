@@ -1,21 +1,5 @@
 [
   {
-    "id": "8l8j",
-    "name": "Prince of Persia",
-    "company": "Nintendo",
-    "price": 59,
-    "inStock": 4,
-    "inShopCart": 0
-  },
-  {
-    "id": "QYty",
-    "name": "Halo 2",
-    "company": "X Box",
-    "price": 15.99,
-    "inStock": 0,
-    "inShopCart": 0
-  },
-  {
     "id": "3CcE",
     "name": "Minecraft",
     "company": "Microsoft",
@@ -29,6 +13,22 @@
     "company": "Nintendo",
     "price": 59.99,
     "inStock": 2,
+    "inShopCart": 0
+  },
+  {
+    "id": "8l8j",
+    "name": "Captain Toad",
+    "company": "Nintendo",
+    "price": "39.99",
+    "inStock": 4,
+    "inShopCart": 0
+  },
+  {
+    "id": "QYty",
+    "name": "Halo 2",
+    "company": "X Box",
+    "price": 15.99,
+    "inStock": 0,
     "inShopCart": 0
   }
 ]

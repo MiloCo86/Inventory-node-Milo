@@ -1,6 +1,8 @@
 # Game inventory 
 ## Description 🪧
 
+The game inventory app allows the user to manage an inventory of games as well as a shopping cart for that inventory.
+
 ## Scripts ⌨️
 
 
@@ -49,10 +51,34 @@ npm run showGame name="Prince of Persia"
 
 
 `deleGame` deletes or remove the game that match the ID from the inventory
+
 parameters:  
 - **id**: the id of the game to delete
 
 Examples:
 ```
 npm run deleteGame id=1234
+```
+
+`updateGame` find and update a game that match the id in the inventory
+
+parameters (id is required, name, company and inStock values are optional, you can update 1 value or all of them): 
+
+- **id**: the id of the game to update
+- **name**: new Name of the game
+- **company**: new company
+- **inStock**: to modify the amount of copies in the inventary
+
+Examples:
+```
+npm run updateGame id=8l8j name='Captain Toad' price=39.99
+npm run updateGame id=QYty company=Microsoft
+```
+
+`showShopCart` prints the shop Cart
+
+
+Examples:
+```
+npm run showShopCart
 ```

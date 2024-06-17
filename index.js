@@ -1,5 +1,5 @@
 const { validateNewGameParams } = require("./src/helpers")
-const { addNewGameToData, showAll,showGame, deleteGame} = require('./src/inventoryController')
+const { addNewGameToData, showAll,showGame, deleteGame, updateGame,showShopCart} = require('./src/inventoryController')
 const print = console.log;
 
 function run() {
@@ -19,11 +19,14 @@ function run() {
         case "showGame":
             showGame(parameters)
             break;
-        case "DeleteGame":
+        case "deleteGame":
             deleteGame(parameters)
             break;
-        case "UpdateGame":
-            
+        case "updateGame":
+            updateGame(parameters)
+            break;
+        case "showShopCart":
+            showShopCart();
             break;
         case "addToShopCart":
             

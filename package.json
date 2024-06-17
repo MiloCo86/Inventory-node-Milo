@@ -7,13 +7,14 @@
     "addNewGame": "node index.js addNewGame",
     "showAll": "node index.js showAll",
     "showGame": "node index.js showGame",
-    "deleteGame": "node index.js DeleteGame",
-    "updateGameInfo": "node index.js UpdateGame",
+    "deleteGame": "node index.js deleteGame",
+    "updateGame": "node index.js updateGame",
+    "showShopCart": "node index.js showShopCart",
     "addToShopCart": "node index.js addToShopCart",
     "emptyShopCart": "node index.js emptyShopCart"
   },
   "keywords": [],
-  "author": "",
+  "author": "Milo",
   "license": "ISC",
   "dependencies": {
     "colors": "^1.4.0",
