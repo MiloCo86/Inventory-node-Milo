@@ -75,10 +75,22 @@ npm run updateGame id=8l8j name='Captain Toad' price=39.99
 npm run updateGame id=QYty company=Microsoft
 ```
 
-`showShopCart` prints the shop Cart
-
+`showShopCart` prints the shopCart elements and the total
 
 Examples:
 ```
 npm run showShopCart
 ```
+
+`addToShopCart` add a game to the shopCart based on the id
+
+Examples:
+```
+npm run addToShopCart id=tGTs
+```
+
+`emptyShopCart` empty the shopCart
+
+Examples:
+```
+npm run emptyShopCart

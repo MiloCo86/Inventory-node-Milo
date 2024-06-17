@@ -178,6 +178,21 @@ function addToShopCart(id){
     }
     
 }
+function emptyShopCart(){
+    if (shopCart.length == 0 ){
+        print(colors.yellow(`no games in the shopCart`))
+    }else{
+        data.forEach(game =>{
+            game.inStock += game.inShopCart
+            game.inShopCart = 0
+        })
+        print(colors.green(`Shop Cart Empty`))
+        writeData('./data','gameInventory.json',data)
+        writeData('./data','shopCart.json',[])
+    }
+    
+
+}
 
 module.exports = {
     addNewGameToData,
@@ -186,6 +201,7 @@ module.exports = {
     deleteGame,
     updateGame,
     showShopCart,
-    addToShopCart
+    addToShopCart,
+    emptyShopCart
 }
 

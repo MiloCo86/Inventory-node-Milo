@@ -4,16 +4,16 @@
     "name": "Minecraft",
     "company": "Microsoft",
     "price": 18.5,
-    "inStock": 1,
-    "inShopCart": 2
+    "inStock": 3,
+    "inShopCart": 0
   },
   {
     "id": "M5aO",
     "name": "Super Mario Odissey",
     "company": "Nintendo",
     "price": 59.99,
-    "inStock": 0,
-    "inShopCart": 1
+    "inStock": 1,
+    "inShopCart": 0
   },
   {
     "id": "8l8j",
@@ -44,7 +44,7 @@
     "name": "FIFA 24",
     "company": "EA Sports",
     "price": 50.99,
-    "inStock": 3,
-    "inShopCart": 1
+    "inStock": 4,
+    "inShopCart": 0
   }
 ]
