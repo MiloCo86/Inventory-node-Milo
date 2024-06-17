@@ -1,4 +1,4 @@
-const { readData, writeData, validateShowAllParams, validateShowGameParams, validateDeleteParams,validateUpdateParams } = require("./helpers");
+const { readData, writeData, validateShowAllParams, validateShowGameParams, validateDeleteParams,validateUpdateParams,parseToCart } = require("./helpers");
 const { nanoid } = require("nanoid");
 const colors = require("colors");
 
@@ -128,12 +128,54 @@ function showShopCart(){
     if (shopCart.length==0){
         print(colors.yellow('ShopCart is empty'))
     }else{
-        print(shopCart)
+        let total = 0
+        shopCart.forEach(game =>{
+            total += game.price*game.quantity
+            print(colors.blue(`${game.name} Quantity: ${game.quantity} -> ${game.quantity*game.price}`))
+        })
+        print(colors.bgBlue(`Total = ${total.toFixed(2)}`))
     }
 }
 
 function addToShopCart(id){
     let validID = validateShowGameParams(id)
+    let checker = false
+    let game ={}
+    if (validID!=undefined){
+        if(validID.id){
+            game = data.find(game=>game.id == validID.id)
+            if(game==undefined){
+                print(colors.yellow('ID not found'))
+            }else if(game.inStock == 0){
+                print(colors.yellow(`${game.name} is out of Stock`))
+            }else{
+                checker =true
+                let idx = data.findIndex(game=>game.id == validID.id)
+                if(idx>=0){
+                    data[idx].inStock--
+                    data[idx].inShopCart++
+                }
+                
+                const cartGame = parseToCart(game);
+                
+                let validator = shopCart.find(game=>game.id == validID.id)
+                if(validator){
+                    let cartGameIdx = shopCart.findIndex(game=>game.id == validID.id)
+                    shopCart[cartGameIdx].quantity++
+                }else{
+                    shopCart.push(cartGame)
+                }
+                
+            }
+        }
+        if(checker){
+            print(colors.green(`${game.name} add it to the ShopCart`))
+            writeData('./data','gameInventory.json',data)
+            writeData('./data','shopCart.json',shopCart) 
+        }
+           
+
+    }
     
 }
 
@@ -143,6 +185,7 @@ module.exports = {
     showGame,
     deleteGame,
     updateGame,
-    showShopCart
+    showShopCart,
+    addToShopCart
 }
 

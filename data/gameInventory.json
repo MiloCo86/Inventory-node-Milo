@@ -3,17 +3,17 @@
     "id": "3CcE",
     "name": "Minecraft",
     "company": "Microsoft",
-    "price": 19.5,
+    "price": 18.5,
     "inStock": 1,
-    "inShopCart": 0
+    "inShopCart": 2
   },
   {
     "id": "M5aO",
     "name": "Super Mario Odissey",
     "company": "Nintendo",
     "price": 59.99,
-    "inStock": 2,
-    "inShopCart": 0
+    "inStock": 0,
+    "inShopCart": 1
   },
   {
     "id": "8l8j",
@@ -28,7 +28,23 @@
     "name": "Halo 2",
     "company": "X Box",
     "price": 15.99,
-    "inStock": 0,
+    "inStock": 2,
     "inShopCart": 0
+  },
+  {
+    "id": "DOrL",
+    "name": "Overwatch",
+    "company": "Blizzar",
+    "price": 30,
+    "inStock": 3,
+    "inShopCart": 0
+  },
+  {
+    "id": "tGTs",
+    "name": "FIFA 24",
+    "company": "EA Sports",
+    "price": 50.99,
+    "inStock": 3,
+    "inShopCart": 1
   }
 ]

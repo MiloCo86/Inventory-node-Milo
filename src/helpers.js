@@ -30,7 +30,7 @@ function validateNewGameParams(array){
         break
       }else{
         const [key, value] = param.split("=");
-        if(key == 'id' || key == 'name' || key == 'company' || key == 'price' || key == 'inStock'){
+        if(key == 'id' || key == 'name' || key == 'company' || key == 'price' || key == 'stock'){
           newGameFormated[key] = value;
         }else{
           print(colors.red(`${key} is not a valid key`))
@@ -163,6 +163,16 @@ function validateUpdateParams (array){
   }
 }
 
+function parseToCart(game){
+  return {
+    id: game.id,
+    name: game.name,
+    company: game.company,
+    price: Number(game.price),
+    quantity: 1,
+  }
+}
+
 
 module.exports = {
   readData,
@@ -171,5 +181,6 @@ module.exports = {
   validateShowAllParams,
   validateShowGameParams,
   validateDeleteParams,
-  validateUpdateParams
+  validateUpdateParams,
+  parseToCart
 };

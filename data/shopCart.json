@@ -1,0 +1,23 @@
+[
+  {
+    "id": "3CcE",
+    "name": "Minecraft",
+    "company": "Microsoft",
+    "price": 18.5,
+    "quantity": 2
+  },
+  {
+    "id": "M5aO",
+    "name": "Super Mario Odissey",
+    "company": "Nintendo",
+    "price": 59.99,
+    "quantity": 1
+  },
+  {
+    "id": "tGTs",
+    "name": "FIFA 24",
+    "company": "EA Sports",
+    "price": 50.99,
+    "quantity": 1
+  }
+]
